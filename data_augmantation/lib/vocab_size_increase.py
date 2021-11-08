@@ -63,6 +63,10 @@ class VocabSizeIncrease:
         log_x = math.log(self.word_count)
         # 20210501のデータで多項式回帰 TODO 学習データ増やす
         perdicted_vocab_size = self.word_count * (math.e ** (-0.01237875*(log_x**2) + -0.30082554*log_x + 1.8402359926153995))
+
+        print(int(perdicted_vocab_size))
+        perdicted_vocab_size = self.word_count * (math.e ** (-0.01755446*(log_x**2) + -0.16824135*log_x + 1.0489287366343656))
+        print(int(perdicted_vocab_size))
         
         return int(perdicted_vocab_size)
 
